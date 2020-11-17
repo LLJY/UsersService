@@ -1,0 +1,1 @@
+ grpcurl --plaintext --proto protos/user.proto  -d '{"userid": "12345678"}' localhost:8001 services.User/GetUserInfo

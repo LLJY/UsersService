@@ -1,0 +1,26 @@
+{
+  "name": "usersservice",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "tsc && node app.js",
+    "dev": "GOOGLE_APPLICATION_CREDENTIALS=\"../google-credentials.json\" tsc-watch --onSuccess \"node app.js\""
+  },
+  "dependencies": {
+    "@grpc/proto-loader": "^0.5.5",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/helmet": "^4.0.0",
+    "@types/morgan": "^1.9.2",
+    "@types/node": "^14.14.7",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "firebase-admin": "^9.4.1",
+    "grpc": "^1.24.4",
+    "grpc-tools": "^1.9.1",
+    "grpc_tools_node_protoc_ts": "^5.0.1",
+    "helmet": "^4.2.0",
+    "morgan": "~1.9.1",
+    "ts-protoc-gen": "^0.13.0",
+    "typesaurus": "^6.2.0"
+  }
+}
