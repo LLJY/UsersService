@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "tsc && node app.js",
-    "dev": "GOOGLE_APPLICATION_CREDENTIALS=\"../google-credentials.json\" tsc-watch --onSuccess \"node app.js\""
+    "start": "export GOOGLE_APPLICATION_CREDENTIALS=\"/home/lucas/Projects/School/MCSV/Services/google-credentials.json\" && tsc && node app.js",
+    "dev": " tsc-watch --onSuccess \"node app.js\""
   },
   "dependencies": {
     "@grpc/proto-loader": "^0.5.5",

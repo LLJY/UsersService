@@ -15,4 +15,5 @@ node node_modules/.bin/grpc_tools_node_protoc \
 node node_modules/.bin/grpc_tools_node_protoc \
     --plugin="protoc-gen-ts=${PROTOC_GEN_TS_PATH}" \
     --ts_out="${OUT_DIR}" \
+    -I ./protos \
     protos/*.proto

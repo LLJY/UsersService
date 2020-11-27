@@ -1,16 +1,17 @@
 import { handleUnaryCall } from "grpc";
-import { IUserServer } from "../protogen/protos/user_grpc_pb";
-import { GetUserInfoRequest, GetUserInfoResponse, UpdateProfileRequest, UpdateProfileResponse } from "../protogen/protos/user_pb";
+import { IUserServer } from "../protogen/user_grpc_pb";
+import { GetUserInfoRequest, GetUserInfoResponse, UpdateProfileRequest, UpdateProfileResponse } from "../protogen/user_pb";
 import { collection, add, set, update, get } from 'typesaurus'
+import * as fs from "fs";
 import {User} from "../models/User";
 import * as grpc from "grpc";
 import * as admin from "firebase-admin";
 const app = admin.initializeApp();
-
-const users = collection<User>('users')
+const users = collection<User>('users');
 export class MainService implements IUserServer{
     getUserInfo: handleUnaryCall<GetUserInfoRequest, GetUserInfoResponse> = async (call: grpc.ServerUnaryCall<GetUserInfoRequest>, callback: grpc.sendUnaryData<GetUserInfoResponse>)=> {
         // get the user from firestore
+        console.log(call.request);
         const user = await get(users, call.request.getUserid());
         const response = new GetUserInfoResponse();
         if(user != null){
